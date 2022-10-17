@@ -1,3 +1,10 @@
+:root {
+  --color-primary: #a52a2a;
+  --color-secondary: #2531b4;
+  --color-text-light: #ffff;
+  --color-text-dark: #0000;
+}
+
 * {
   margin: 0;
   padding: 0;
