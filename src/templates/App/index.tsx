@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CardProps } from '../../components/Card';
 import fetchPokemon from '../../utils/pokeApi';
-import { cardsManipulation } from '../../utils/cards-manipulation';
 import './styles.css';
 import GameTable from '../../components/GameTable';
 
@@ -16,14 +15,16 @@ function App() {
         pokeArray.push(pokemon);
       }
       setData(pokeArray);
-      setData((prev) => cardsManipulation(prev));
     }
     getPokemons();
   },[]);
-
+  
   return (
     <div className='app'>
-      <GameTable cards={data} />
+      {
+        data.length <= 0 ? <h1>Loading</h1>
+          : <GameTable cards={data} />
+      }
     </div>
   )
 }
